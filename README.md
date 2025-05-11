@@ -24,13 +24,12 @@ Siga estes passos para iniciar:
 1. **Clone o repositório**  
 
     ```bash
-        git clone https://github.com/seu-usuario/tinnova_challenge.git
-        cd tinnova_challenge
+    git clone https://github.com/miguelARocha/tinnova_challenge.git & cd tinnova_challenge
     ```
 
 2. **Utilize o script de inicialização**  
     ```bash
-        php artisan app:setup
+    php artisan app:setup
     ```
 
 **Agora é só iniciar o app** 
@@ -41,18 +40,40 @@ Siga estes passos para iniciar:
 
 1. **Inicie o servidor Laravel**  
     ```bash
-        php artisan serve
+    php artisan serve
     ```
 
 2. **Inicie o Vite (Frontend)**  
     ```bash
-        pnpm dev
+    pnpm dev
     ```
 
 🎉 **Pronto!** Acesse em: [http://localhost:8000](http://localhost:8000)
 
 ---
 
-**Dica:** Mantenha o console aberto e um café ☕ por perto.
+
+### Tarefas
+
+## 📊 Tarefa 1: Cálculo de Percentuais de Votos
+
+**Acesse os resultados de duas formas:**
+1. **Interface Gráfica:**  
+   Após iniciar o servidor, acesse:  
+   🔗 [http://localhost:8000/eleicao](http://localhost:8000/eleicao)  
+   *Visualize um gráfico interativo com Chart.js*
+
+2. **Endpoint da API (JSON):**  
+   ⚡ `GET /api/eleicao`  
+   ```bash
+    curl http://localhost:8000/api/eleicao
+   ```
+    *Retorna os percentuais em formato JSON*
+---
+
+
+
+
+Mantenha o console aberto e um café ☕ por perto.
 
 ---

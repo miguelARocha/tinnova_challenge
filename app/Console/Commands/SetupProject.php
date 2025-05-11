@@ -36,6 +36,7 @@ class SetupProject extends Command
 
         if ($this->confirm('Deseja iniciar o servidor de desenvolvimento agora?', false)) {
             $this->info('🚀 Iniciando servidor em http://127.0.0.1:8000 ...');
+            passthru('npm run dev');
             passthru('php artisan serve');
         }
     }
