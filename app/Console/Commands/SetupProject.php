@@ -13,15 +13,12 @@ class SetupProject extends Command
 
     public function handle()
     {
-        file_put_contents(base_path('database/database.sqlite'), '');
         $this->info('🔧 Iniciando configuração do projeto...');
-
-        // Cria o .env se não existir
-        if (!file_exists(base_path('.env'))) {
-            passthru('npm install');
-            $this->info('⚙️  Criando arquivo .env...');
-            copy(base_path('.env.example'), base_path('.env'));
-        }
+        passthru('npm install');
+        file_put_contents(base_path('database/database.sqlite'), '');
+        $this->info('⚙️  Criando arquivo .env...');
+        copy(base_path('.env.example'), base_path('.env'));
+        
 
         $this->runArtisanCommand('key:generate', 'Gerando chave da aplicação');
 
