@@ -25,16 +25,11 @@ class SetupProject extends Command
 
         $this->runArtisanCommand('key:generate', 'Gerando chave da aplicação');
 
-        if ($this->confirm('Deseja apagar todas as tabelas e recriar com migrate:fresh?', false)) {
-            $this->runArtisanCommand('migrate:fresh', 'Executando migrations com fresh');
-        } else {
-            $this->runArtisanCommand('migrate', 'Executando migrations');
-        }
+        $this->runArtisanCommand('migrate', 'Executando migrations');
+        
 
-        if ($this->confirm('Deseja popular o banco de dados com os seeders?', false)) {
-            $this->runArtisanCommand('db:seed', 'Executando seeders');
-        }
-
+        $this->runArtisanCommand('db:seed', 'Executando seeders');
+        
         $this->runArtisanCommand('storage:link', 'Criando link simbólico para o storage');
 
         $this->runArtisanCommand('config:clear', 'Limpando cache de configuração');
