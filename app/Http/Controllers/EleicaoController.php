@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Calculos\Eleicao;
 
 class EleicaoController extends Controller {
-    public function viewResultados() {
+    public function view() {
         return view('eleicao.resultados');
     }
 

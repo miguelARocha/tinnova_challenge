@@ -2,14 +2,29 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EleicaoController;
+use App\Http\Controllers\BubbleSortController;
+
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Rota para a view HTML
-Route::get('/eleicao', [EleicaoController::class, 'viewResultados'])->name('eleicao.view');
-
-// Rota para a API JSON 
+/*
+* Tarefa 1
+*/
+Route::get('/eleicao', [EleicaoController::class, 'view'])->name('eleicao.view');
 Route::get('/api/eleicao', [EleicaoController::class, 'apiResultados'])->name('eleicao.api');
+
+
+
+/*
+* Tarefa 2
+*/
+Route::get('/bubble', [BubbleSortController::class, 'view'])->name('bubble.view');
+Route::post('/api/bubble', [BubbleSortController::class, 'sort']);
+
+
+
+
+

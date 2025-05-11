@@ -71,6 +71,15 @@ Siga estes passos para iniciar:
     *Retorna os percentuais em formato JSON*
 ---
 
+## 🔄 Tarefa 2: Algoritmo Bubble Sort
+
+**Como utilizar:**
+1. **Interface Gráfica:**  
+   Após iniciar o servidor, acesse:  
+   🔗 [http://localhost:8000/bubble](http://localhost:8000/bubble)  
+   *Visualize um passo a passo da ordenação*
+---
+
 
 
 
