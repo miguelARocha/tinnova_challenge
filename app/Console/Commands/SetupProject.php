@@ -22,8 +22,11 @@ class SetupProject extends Command
 
         $this->runArtisanCommand('key:generate', 'Gerando chave da aplicação');
 
-        $this->call('migrate'); // Migrações
-        $this->call('db:seed'); // Seeders
+        $this->info('➡️  Executando migrations...');
+        $this->call('migrate', ['--force' => true]);
+
+        $this->info(PHP_EOL . '➡️  Executando seeders...');
+        $this->call('db:seed', ['--force' => true]);
         
         $this->runArtisanCommand('storage:link', 'Criando link simbólico para o storage');
 
