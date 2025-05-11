@@ -13,6 +13,7 @@ class SetupProject extends Command
 
     public function handle()
     {
+        file_put_contents(base_path('database/database.sqlite'), '');
         $this->info('🔧 Iniciando configuração do projeto...');
 
         // Cria o .env se não existir
@@ -23,11 +24,6 @@ class SetupProject extends Command
         }
 
         $this->runArtisanCommand('key:generate', 'Gerando chave da aplicação');
-
-        if (!file_exists(base_path('database/database.sqlite'))) {
-            $this->info('⚙️  Criando banco de dados SQLite...');
-            file_put_contents(base_path('database/database.sqlite'), '');
-        }
 
         if ($this->confirm('Deseja apagar todas as tabelas e recriar com migrate:fresh?', false)) {
             $this->runArtisanCommand('migrate:fresh', 'Executando migrations com fresh');

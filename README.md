@@ -9,11 +9,11 @@ Aqui você encontrará a implementação das **5 tasks solicitadas** usando Lara
 ## 🧰 Pré-requisitos
 
 Antes de começar, verifique se tem instalado:
-    - 🐘 **PHP ≥ 8.1**
-    - 📦 **Composer** (Gerenciador de pacotes PHP)
-    - 🟢 **Node.js ≥ 16.x** (Para o frontend dinâmico)
-    - 🚀 **PNPM** (Recomendado mas não obrigatório!)
-    - 🗃️ **SQLite** (Banco de dados simplificado)
+  - 🐘 **PHP ≥ 8.1**
+  - 📦 **Composer** (Gerenciador de pacotes PHP)
+  - 🟢 **Node.js ≥ 16.x** (Para o frontend dinâmico)
+  - 🚀 **PNPM** (Recomendado mas não obrigatório!)
+  - 🗃️ **SQLite** (Banco de dados simplificado)
 
 ---
 
@@ -27,7 +27,12 @@ Siga estes passos para iniciar:
     git clone https://github.com/miguelARocha/tinnova_challenge.git & cd tinnova_challenge
     ```
 
-2. **Utilize o script de inicialização**  
+2. **Instale as dependencias do composer**  
+    ```bash
+    composer install
+    ```
+
+3. **Utilize o script de inicialização**  
     ```bash
     php artisan app:setup
     ```
