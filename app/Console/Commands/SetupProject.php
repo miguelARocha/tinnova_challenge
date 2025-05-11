@@ -10,12 +10,24 @@ class SetupProject extends Command
     protected $signature = 'app:setup';
     protected $description = 'Executa a configuração inicial do projeto Laravel';
 
-    
+
     public function handle()
     {
         $this->info('🔧 Iniciando configuração do projeto...');
 
+        // Cria o .env se não existir
+        if (!file_exists(base_path('.env'))) {
+            passthru('npm install');
+            $this->info('⚙️  Criando arquivo .env...');
+            copy(base_path('.env.example'), base_path('.env'));
+        }
+
         $this->runArtisanCommand('key:generate', 'Gerando chave da aplicação');
+
+        if (!file_exists(base_path('database/database.sqlite'))) {
+            $this->info('⚙️  Criando banco de dados SQLite...');
+            file_put_contents(base_path('database/database.sqlite'), '');
+        }
 
         if ($this->confirm('Deseja apagar todas as tabelas e recriar com migrate:fresh?', false)) {
             $this->runArtisanCommand('migrate:fresh', 'Executando migrations com fresh');
@@ -36,7 +48,6 @@ class SetupProject extends Command
 
         if ($this->confirm('Deseja iniciar o servidor de desenvolvimento agora?', false)) {
             $this->info('🚀 Iniciando servidor em http://127.0.0.1:8000 ...');
-            passthru('npm run dev');
             passthru('php artisan serve');
         }
     }
@@ -52,6 +63,6 @@ class SetupProject extends Command
 
         if ($codigo !== 0) {
             $this->error("❌ O comando '{$command}' falhou com código de saída {$codigo}.");
-        } 
+        }
     }
 }
