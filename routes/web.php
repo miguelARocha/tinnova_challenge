@@ -5,6 +5,9 @@ use App\Http\Controllers\EleicaoController;
 use App\Http\Controllers\BubbleSortController;
 use App\Http\Controllers\FatorialController;
 use App\Http\Controllers\SomaMultiplosController;
+use App\Http\Controllers\VeiculoController;
+use App\Http\Controllers\API\VeiculoApiController;
+
 
 
 
@@ -39,4 +42,16 @@ Route::post('/api/fatorial', [FatorialController::class, 'calculate'])->name('fa
 Route::get('/somamultiplos', [SomaMultiplosController::class, 'view'])->name('somamultiplos.view');
 Route::post('/api/somamultiplos', [SomaMultiplosController::class, 'calculate'])->name('somamultiplos.calculate');
 
-
+/*
+* Tarefa 5
+*/
+Route::get('/veiculos', [VeiculoController::class, 'view'])->name('somamultiplos.view');
+Route::get('/api/veiculos', [VeiculoApiController::class, 'index']);
+Route::post('/api/veiculos', [VeiculoApiController::class, 'store']);
+Route::get('/api/veiculos/{veiculo}', [VeiculoApiController::class, 'show']);
+Route::delete('/api/veiculos/{veiculo}', [VeiculoApiController::class, 'destroy']);
+Route::put('/api/veiculos/{veiculo}', [VeiculoApiController::class, 'update']);
+// Rotas de relatórios
+Route::get('/api/veiculos/relatorios/nao-vendidos', [VeiculoApiController::class, 'naoVendidos']);
+Route::get('/api/veiculos/relatorios/por-decada', [VeiculoApiController::class, 'porDecada']);
+Route::get('/api/veiculos/relatorios/ultima-semana', [VeiculoApiController::class, 'ultimaSemana']);
