@@ -88,6 +88,14 @@ Siga estes passos para iniciar:
    *Insira um número e veja o resultado instantaneamente*
 ---
 
+## ➕ Tarefa 4: Soma de Múltiplos de 3 ou 5
+
+**Como usar:**
+1. **Interface Web:**  
+   🔗 [http://localhost:8000/somamultiplos](http://localhost:8000/somamultiplos)  
+   *Insira um número limite e veja a soma calculada*
+---
+
 
 
 Mantenha o console aberto e um café ☕ por perto.
