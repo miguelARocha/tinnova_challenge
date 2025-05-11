@@ -80,6 +80,13 @@ Siga estes passos para iniciar:
    *Visualize um passo a passo da ordenação*
 ---
 
+## 🔢 Tarefa 3: Cálculo de Fatorial
+
+**Como usar:**
+1. **Interface Web:**  
+   🔗 [http://localhost:8000/fatorial](http://localhost:8000/fatorial)  
+   *Insira um número e veja o resultado instantaneamente*
+---
 
 
 

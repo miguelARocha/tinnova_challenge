@@ -23,8 +23,14 @@
 
 
 <script>
+    const token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     document.addEventListener('DOMContentLoaded', function() {
-        fetch('/api/eleicao')
+        fetch('/api/eleicao', {
+                method: 'GET',
+                headers: {
+                    'X-CSRF-TOKEN': token
+                }
+            })
             .then(response => response.json())
             .then(data => {
                 const ctx = document.getElementById('eleicaoChart').getContext('2d');

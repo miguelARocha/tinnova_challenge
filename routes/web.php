@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EleicaoController;
 use App\Http\Controllers\BubbleSortController;
+use App\Http\Controllers\FatorialController;
 
 
 
@@ -25,6 +26,10 @@ Route::get('/bubble', [BubbleSortController::class, 'view'])->name('bubble.view'
 Route::post('/api/bubble', [BubbleSortController::class, 'sort']);
 
 
-
+/*
+* Tarefa 3
+*/
+Route::get('/fatorial', [FatorialController::class, 'view'])->name('fatorial.view');
+Route::post('/api/fatorial', [FatorialController::class, 'calculate']);
 
 
